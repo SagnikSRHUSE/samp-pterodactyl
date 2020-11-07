@@ -14,7 +14,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get -y install libstdc++6 lib32stdc++6 tar curl iproute2 openssl \
     && apt-get -y install libtbb2:i386 libtbb-dev:i386 libicu-dev:i386 \
-    && adduser --home /home/container container
+    && useradd -d /home/container -m container
 
 # Ensure UTF-8
 RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
